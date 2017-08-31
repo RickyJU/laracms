@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/post', function () {
-    return "admin is here";
+    return "Admin is here";
 });
