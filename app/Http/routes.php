@@ -28,6 +28,11 @@ Route::get('/read', function(){
 	return $results;
 });
 
+Route::get('/update', function(){
+	$updated = DB::update("UPDATE posts SET title = 'update title' WHERE id = ?", [1]);
+	return $updated;
+});
+
 //Route::get('/post/{id}', 'PostController@index');
 
 //Route::resource('posts', 'PostController');
