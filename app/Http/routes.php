@@ -33,6 +33,11 @@ Route::get('/update', function(){
 	return $updated;
 });
 
+Route::get('/delete', function(){
+	$deleted = DB::delete("DELETE FROM posts WHERE id = ?", [1]);
+	return $deleted;
+});
+
 //Route::get('/post/{id}', 'PostController@index');
 
 //Route::resource('posts', 'PostController');
