@@ -20,6 +20,14 @@ Route::get('/insert', function(){
 	['PHP with Laravel', 'Laravel is the best Thing that happen to PHP']);
 });
 
+Route::get('/read', function(){
+	$results = DB::select("SELECT * FROM posts WHERE id = ?", [1]);
+	//foreach($results as $post){
+	//	return $post->title;
+	//}
+	return $results;
+});
+
 //Route::get('/post/{id}', 'PostController@index');
 
 //Route::resource('posts', 'PostController');
