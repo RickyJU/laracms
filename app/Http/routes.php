@@ -41,6 +41,14 @@ Route::get('/create', function(){
 	Post::create(['title' => 'create method', 'content' => 'saya belajar banyak hari ini']);
 });
 
+Route::get('/basicupdate', function(){
+	$post = Post::find(1);
+	$post->title = 'Updated Eloquent Title';
+	$post->content = 'Updated Eloquent Content';
+	
+	$post->save();
+	
+});
 //Route::get('/', function () {
 //   return view('welcome');
 //});
