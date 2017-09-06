@@ -89,6 +89,10 @@ Route::get('/restore', function(){
 	Post::withTrashed()->where('id', 7)->restore();
 });
 
+Route::get('/forcedelete', function(){
+	Post::onlyTrashed()->where('is_admin', 0)->forcedelete();
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
