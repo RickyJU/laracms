@@ -54,6 +54,11 @@ Route::get('/update', function(){
 	Post::where('id', 1)->where('is_admin', 0)->update(['title' => 'NEW PHP TITLE', 'content' => 'I love learning laravel']);
 });
 
+Route::get('/delete', function(){
+	$post = Post::find(1);
+	$post->delete();
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
