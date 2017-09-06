@@ -24,6 +24,11 @@ Route::get('/find', function(){
 	$post = Post::find(1);
 	return $post->title;
 });
+
+Route::get('/findwhere', function(){
+	$posts = Post::where('is_admin', 0)->orderBy('id', 'desc')->take(1)->get();
+	return $posts;
+});
 //Route::get('/', function () {
 //   return view('welcome');
 //});
