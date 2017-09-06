@@ -67,6 +67,10 @@ Route::get('/delete3', function(){
 	Post::where('is_admin', 0)->delete();
 });
 
+Route::get('/softdelete', function(){
+	Post::find(7)->delete();
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
