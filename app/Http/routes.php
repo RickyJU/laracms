@@ -71,6 +71,20 @@ Route::get('/softdelete', function(){
 	Post::find(7)->delete();
 });
 
+Route::get('/readsoftdelete', function(){
+	//$post = Post::find(7);
+	//return $post;
+	
+	//$post = Post::withTrashed()->where('id', 7)->get();
+	//return $post;
+	
+	//$post = Post::withTrashed()->get();
+	//return $post;
+	
+	$post = Post::onlyTrashed()->get();
+	return $post;
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
