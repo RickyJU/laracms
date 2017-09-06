@@ -36,6 +36,11 @@ Route::get('/basicinsert', function(){
 	$post->content = 'Wow Eloquent is really cool';
 	$post->save();
 });
+
+Route::get('/create', function(){
+	Post::create(['title' => 'create method', 'content' => 'saya belajar banyak hari ini']);
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
