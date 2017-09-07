@@ -103,6 +103,15 @@ Route::get('/post/{id}/user', function($id){
 	return Post::find($id)->user->name;
 });
 
+//one to many relationship
+Route::get('/posts', function(){
+	$user = User::find(1);
+	
+	foreach($user->posts as $post){
+		echo $post->title;
+	}
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
