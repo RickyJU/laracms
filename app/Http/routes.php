@@ -112,6 +112,14 @@ Route::get('/posts', function(){
 	}
 });
 
+Route::get('/user/{id}/posts', function($id){
+	$user = User::find($id);
+	
+	foreach($user->posts as $post){
+		echo $post->title;
+	}
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
