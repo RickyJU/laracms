@@ -120,6 +120,15 @@ Route::get('/user/{id}/posts', function($id){
 	}
 });
 
+//many to many relationship
+Route::get('/user/{id}/role', function($id){
+	$user = User::find($id)->roles()->orderBy('id', 'desc')->get();
+	return $user;
+	//foreach($user->roles as $role){
+	//	echo $role->name;
+	//}
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
