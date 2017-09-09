@@ -163,6 +163,23 @@ Route::get('/user/country/{id}', function($id){
 	}
 });
 
+//Polymorphic relationts
+Route::get('/post/photos', function(){
+	$post = Post::find(1);
+	
+	foreach($post->photos as $photo){
+		echo $photo->path;
+	}
+});
+
+Route::get('/user/photos', function(){
+	$user = User::find(1);
+	
+	foreach($user->photos as $photo){
+		echo $photo->path;
+	}
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
