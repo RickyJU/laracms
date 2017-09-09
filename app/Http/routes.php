@@ -2,6 +2,7 @@
 
 use App\Post;
 use App\User;
+use App\country;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -142,6 +143,15 @@ Route::get('user/{id}/pivot', function($id){
 	
 	foreach($user->roles as $role){
 		echo $role->pivot->created_at;
+	}
+});
+
+//Has many Through relation
+Route::get('/user/country', function(){
+	$country = country::find(1);
+	
+	foreach($country->posts as $post){
+		echo $post->title;
 	}
 });
 
