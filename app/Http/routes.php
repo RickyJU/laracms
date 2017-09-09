@@ -155,6 +155,14 @@ Route::get('/user/country', function(){
 	}
 });
 
+Route::get('/user/country/{id}', function($id){
+	$country = country::find($id);
+	
+	foreach($country->posts as $post){
+		echo $post->title;
+	}
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
