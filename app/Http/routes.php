@@ -180,6 +180,22 @@ Route::get('/user/photos', function(){
 	}
 });
 
+Route::get('/post/{id}/photos', function($id){
+	$post = Post::find($id);
+	
+	foreach($post->photos as $photo){
+		echo $photo->path;
+	}
+});
+
+Route::get('/user/{id}/photos', function($id){
+	$user = User::find($id);
+	
+	foreach($user->photos as $photo){
+		echo $photo->path;
+	}
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
