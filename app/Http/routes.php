@@ -3,6 +3,7 @@
 use App\Post;
 use App\User;
 use App\country;
+use App\photo; 
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -194,6 +195,12 @@ Route::get('/user/{id}/photos', function($id){
 	foreach($user->photos as $photo){
 		echo $photo->path;
 	}
+});
+
+//Polymorphic Relation the inverse
+Route::get('photo/{id}/post', function($id){
+	$photo = Photo::findOrFail($id);
+	return $photo->imageable;
 });
 
 //Route::get('/', function () {
