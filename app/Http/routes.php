@@ -231,6 +231,14 @@ Route::get('/video/tag/{id}', function($id){
 	}
 });
 
+// Polymorphic Many to Many - retrieving owner
+Route::get('/tag/post', function(){
+	$tag = Tag::find(1);
+	foreach($tag->posts as $post){
+		echo $post->title;
+	}
+});
+
 //Route::get('/', function () {
 //   return view('welcome');
 //});
