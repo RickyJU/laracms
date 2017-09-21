@@ -4,6 +4,8 @@ use App\Post;
 use App\User;
 use App\country;
 use App\photo; 
+use App\Tag;
+use App\Video;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -208,6 +210,23 @@ Route::get('/post/tag', function(){
 	$post = Post::find(1);
 	
 	foreach($post->tags as $tag){
+		echo $tag->name;
+	}
+});
+
+//latihan polymorphic many to many
+Route::get('/post/tag/{id}', function($id){
+	$post = Post::find($id);
+	
+	foreach($post->tags as $tag){
+		echo $tag->name;
+	}
+});
+
+Route::get('/video/tag/{id}', function($id){
+	$video = video::find($id);
+	
+	foreach($video->tags as $tag){
 		echo $tag->name;
 	}
 });
