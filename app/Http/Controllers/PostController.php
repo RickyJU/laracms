@@ -89,6 +89,10 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
+		//return $request->all();
+		$post = Post::findOrFail($id);
+		$post->update($request->all());
+		return redirect('/posts');
     }
 
     /**
