@@ -31,5 +31,12 @@ class Post extends Model
 	public function tags(){
 		return $this->morphToMany('App\Tag', 'taggable');
 	}
+	
+	public static function scopeLatest($query){
+		//Format nama function --> scope + MAUNGAPAIN
+		//scope + Latest (mau menampilkan Latest Post)
+		
+		return $query->orderBy('id', 'desc')->get();
+	}
 }
 
