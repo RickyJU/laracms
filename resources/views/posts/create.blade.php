@@ -5,7 +5,7 @@
 @section('content')
 
 	<!-- <form action="/posts" method="post"> -->
-	{!! Form::open(['method'=>'POST', 'action'=>'PostController@store']) !!}
+	{!! Form::open(['method'=>'POST', 'action'=>'PostController@store', 'files'=>true]) !!}
 		<div class="form-group">
 			{!! Form::label('title', 'Title:') !!}
 			{!! Form::text('title', null, ['class'=>'form-control']) !!}
@@ -14,6 +14,11 @@
 		<div class="form-group">
 			{!! Form::label('content', 'Content:') !!}
 			{!! Form::text('content', null, ['class'=>'form-control']) !!}
+		</div>
+		
+		<div class="from-group">
+			{!! Form::label('Gambar', 'File:') !!}
+			{!! Form::file('gambar', ['class'=>'form-control']) !!}
 		</div>
 		
 		<div class="form-group">
